@@ -1,0 +1,40 @@
+*{box-sizing:border-box}
+html{font-size:20px}
+body{margin:0;font-family:Georgia,"Times New Roman",serif;line-height:1.5;color:#1d1d1d;background:#f6f4ef}
+a{color:#0b4f8a}
+a:hover{color:#08365e}
+header{background:#1f3a5a;color:#fff}
+.wrap{max-width:860px;margin:0 auto;padding:0 1rem}
+.top{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;padding:.6rem 0}
+.brand{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-size:1.3rem;font-weight:bold}
+.brand img{width:48px;height:48px;border-radius:50%;object-fit:cover;background:#fff}
+nav{margin-left:auto;display:flex;flex-wrap:wrap;gap:.2rem}
+nav a{color:#fff;text-decoration:none;padding:.3rem .6rem;border-radius:4px;font-family:Arial,Helvetica,sans-serif;font-size:.95rem}
+nav a:hover,nav a[aria-current]{background:#35587f}
+main{background:#fff;padding:1rem 1.2rem 1.2rem;margin:1rem auto;border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+h1{font-size:1.7rem;margin:.2rem 0 .5rem;color:#1f3a5a}
+h2{font-size:1.3rem;margin:1.2rem 0 .4rem;color:#1f3a5a;border-bottom:2px solid #e3ddd0;padding-bottom:.15rem}
+p,ul{margin:.4rem 0 .7rem}
+ul{padding-left:1.3rem}
+li{margin:.2rem 0}
+.card{background:#f3efe6;border-left:5px solid #1f3a5a;padding:.7rem 1rem;margin:.8rem 0;border-radius:4px}
+.button{display:inline-block;background:#1f3a5a;color:#fff;text-decoration:none;padding:.45rem .9rem;border-radius:5px;font-family:Arial,sans-serif;font-size:.95rem;margin:.2rem .3rem .2rem 0}
+.button:hover{background:#35587f;color:#fff}
+.split{display:flex;gap:1rem;align-items:flex-start}
+.split img{width:180px;flex:none;border-radius:6px}
+.news dt{font-weight:bold;margin-top:.5rem}
+.news dd{margin:0 0 .4rem}
+figure{margin:.6rem 0}
+figure img{max-width:100%;border-radius:6px}
+figcaption{font-size:.85rem;color:#555}
+.placeholder{background:#fff3cd;border:2px dashed #c99a00;padding:.7rem 1rem;border-radius:4px}
+footer{text-align:center;font-size:.8rem;color:#555;padding:.5rem 0 1.5rem}
+@media (max-width:600px){
+ html{font-size:18px}
+ .top{gap:.3rem}
+ nav{margin-left:0;width:100%}
+ nav a{padding:.25rem .45rem}
+ main{margin:.5rem 0;border-radius:0;padding:.8rem .9rem}
+ .split{flex-direction:column}
+ .split img{width:140px}
+}
