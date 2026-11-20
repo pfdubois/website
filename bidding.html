@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bidding With Paul — Paul F. Dubois</title><link rel="canonical" href="https://pfdubois.com/bidding.html"><link rel="stylesheet" href="style.css"><link rel="icon" href="images/pcartoon.jpg"></head>
+<body><header><div class="wrap top"><a class="brand" href="index.html"><img src="images/pcartoon.jpg" alt="">Paul F. Dubois</a><nav><a href="index.html">Home</a><a href="https://pfdubois.github.io/BridgeBidding/index.html" target="_blank" rel="noopener">Bridge Book</a><a href="bidding.html" aria-current="page">Bidding With Paul</a><a href="biography.html">Biography</a><a href="contact.html">Contact</a></nav></div></header>
+<div class="wrap"><main>
+<h1>Bidding With Paul</h1>
+<p>Short video lessons on bridge bidding, a few minutes each. Every video covers one convention or bidding topic. Click a title to play it.</p>
+<p>For the full story on each topic, see my free book, <a href="https://pfdubois.github.io/BridgeBidding/index.html" target="_blank" rel="noopener">Bridge Bidding</a>.</p>
+
+<!-- To add a video: copy one <tr> row, put it where it belongs, and change data-video (the file name without .mp4), the title, the description and the length. -->
+<table class="vlist">
+<thead><tr><th>Lesson</th><th class="len">Length</th></tr></thead>
+<tbody>
+<tr data-video="two-way-new-minor-forcing"><td><a href="#">Two-Way New Minor Forcing</a><div class="desc">After 1m – 1M – 1NT, responder's 2♣ and 2♦ show both strength and major-suit holdings.</div></td><td class="len">2:39</td></tr>
+</tbody>
+</table>
+
+<dialog id="player"><div class="pbar"><span id="ptitle"></span><button id="pclose" aria-label="Close">✕</button></div><video id="pvideo" controls playsinline preload="none"></video></dialog>
+</main><footer>Copyright &copy; 2026 Paul F. Dubois - All Rights Reserved.</footer></div>
+<script>
+// Where the video files live. Change this one line if they move (e.g. to a GitHub Release).
+var VIDEO_BASE = "https://pfdubois.github.io/bidding-videos/";
+var dlg = document.getElementById("player"), vid = document.getElementById("pvideo");
+document.querySelectorAll("tr[data-video]").forEach(function (row) {
+  var name = row.getAttribute("data-video"), a = row.querySelector("a");
+  a.href = VIDEO_BASE + name + ".mp4";
+  a.addEventListener("click", function (e) {
+    if (!dlg.showModal) return;           // very old browser: just open the file
+    e.preventDefault();
+    document.getElementById("ptitle").textContent = a.textContent;
+    vid.poster = VIDEO_BASE + name + ".png";
+    vid.src = VIDEO_BASE + name + ".mp4";
+    dlg.showModal(); vid.play().catch(function () {});
+  });
+});
+function closePlayer() { vid.pause(); vid.removeAttribute("src"); vid.load(); dlg.close(); }
+document.getElementById("pclose").onclick = closePlayer;
+dlg.addEventListener("click", function (e) { if (e.target === dlg) closePlayer(); });
+dlg.addEventListener("cancel", function (e) { e.preventDefault(); closePlayer(); });
+</script>
+<script data-goatcounter="https://pfdubois.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>
